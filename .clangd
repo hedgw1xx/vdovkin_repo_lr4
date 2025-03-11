@@ -1,0 +1,7 @@
+Diagnostics:
+    Suppress: unused-includes
+
+CompileFlags:
+  Compiler: C:\Users\l4v3nx\scoop\apps\mingw-winlibs\current\bin\g++.exe
+
+
