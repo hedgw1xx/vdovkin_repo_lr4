@@ -7,7 +7,30 @@ using namespace std;
 
 int side1, side2;
 
-function<void()> EnterNumber(int &varlink, string label) {}
+bool UserInput(string input) {
+  if (input.empty())
+    return false;
+  try {
+    int number = stoi(input);
+  } catch (...) {
+    return false;
+  }
+  return true;
+}
+
+function<void()> EnterNumber(int &varLink, string label) {
+  return [&varLink, label]() {
+    string raw_input;
+    cout << label;
+    getline(cin, raw_input);
+
+    while (!UserInput(raw_input)) {
+      cout << label;
+      getline(cin, raw_input);
+    }
+    varLink = stoi(raw_input);
+  };
+}
 
 void enterA() {}
 
@@ -26,10 +49,9 @@ struct MenuItem {
 
 int main() {
   map<int, MenuItem> menu = {
-      {1, {"Enter side 1", EnterNumber(side1, "side 1")}},
-      {2, {"Enter side 2", EnterNumber(side2, "side 2")}},
-      {3, {"Calculate area", CalcArea}},
-      {4, {"Calculate perimeter", CalcPerim}},
+      {1, {"Enter number A", enterA}},    {2, {"Enter number B", enterB}},
+      {3, {"Enter number C", enterC}},    {4, {"Remainder", remainder}},
+      {5, {"Integer part", integerPart}},
   };
 
   int choice = 0;
