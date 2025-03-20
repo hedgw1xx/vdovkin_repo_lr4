@@ -5,8 +5,6 @@
 
 using namespace std;
 
-int side1, side2;
-
 bool UserInput(string input) {
   if (input.empty())
     return false;
@@ -32,7 +30,11 @@ function<void()> EnterNumber(int &varLink, string label) {
   };
 }
 
-void enterA() {}
+void enterA() {
+  int a;
+  EnterNumber(a, "Enter number A: ");
+  cout << "Number A: " << a << endl;
+}
 
 void enterB() {}
 
