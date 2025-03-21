@@ -42,7 +42,10 @@ void enterB() {
   cout << "Number B: " << b << endl;
 }
 
-void enterC() {}
+void enterC() {
+  EnterNumber(c, "Enter number C: ")();
+  cout << "Number C: " << c << endl;
+}
 
 void remainder() {}
 
