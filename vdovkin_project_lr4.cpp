@@ -48,10 +48,12 @@ void enterC() {
 }
 
 void remainder() {
-  cout << "Remainder from division of A + B by C: " << (a + b) / c;
+  cout << "Remainder from division of A + B by C: " << (a + b) % c;
 }
 
-void integerPart() {}
+void integerPart() {
+  cout << "Integer part of division of A + B by C: " << (a + b) / c;
+}
 
 struct MenuItem {
   string title;
