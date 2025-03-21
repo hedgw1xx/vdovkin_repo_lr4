@@ -5,7 +5,7 @@
 
 using namespace std;
 
-int a, b, c;
+int a = 0, b = 0, c = 0;
 
 bool UserInput(string input) {
   if (input.empty())
@@ -47,7 +47,9 @@ void enterC() {
   cout << "Number C: " << c << endl;
 }
 
-void remainder() {}
+void remainder() {
+  cout << "Remainder from division of A + B by C: " << (a + b) / c;
+}
 
 void integerPart() {}
 
